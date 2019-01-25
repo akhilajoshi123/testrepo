@@ -1,0 +1,10 @@
+build_image:
+  image: docker:git
+  services:
+  - docker:dind
+  script:
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN in-itbitt1511.persistent.co.in:4567
+    - docker build -t in-itbitt1511.persistent.co.in:4567/scmgroup/java_sample .
+    - docker push in-itbitt1511.persistent.co.in:4567/scmgroup/java_sample:latest
+  only:
+    - master

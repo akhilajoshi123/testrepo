@@ -1,2 +1,1 @@
-# testrepo
-THis a repo for test purpose
+sample java project for CI/CD
